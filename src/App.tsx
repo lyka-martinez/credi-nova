@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { TentTree } from "lucide-react";
 import whiteLogo from './assets/images/logo-white.webp'
 import brandLogo from '/logo.svg'
 import './App.css'
@@ -23,8 +24,11 @@ export default function App() {
             <h1>Vite + React</h1>
             <div className="card">
                 <button onClick={() => setCount((count) => count + 1)}>
+                    <TentTree />
+                    
                     count is {count}
                 </button>
+
                 <p>
                     Edit <code>src/App.tsx</code> and save to test HMR
                 </p>
