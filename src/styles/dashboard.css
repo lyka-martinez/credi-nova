@@ -1,0 +1,18 @@
+/* Reference index css */
+@reference "./index.css";
+
+
+.d-menu a:hover {
+    text-decoration: none;
+}
+
+.d-menu {
+    --d-menu-active-bg: var(--color-primary-500);
+    --d-menu-active-fg: var(--color-white);
+}
+
+.d-menu a,
+.d-menu summary {
+    padding-inline: 14px;
+    padding-block: 11.5px;
+}

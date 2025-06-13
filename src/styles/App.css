@@ -1,0 +1,46 @@
+/* Reference index css */
+@reference "./index.css";
+
+
+#root {
+    @apply 
+    m-0 
+    min-w-xs 
+    min-h-lvh 
+    max-w-lvw;
+}
+
+.b-text-link {
+    @apply text-primary;
+}
+
+
+/* DaisyUI and global overrides */
+.d-fieldset-legend {
+    @apply
+    font-medium
+    text-sm;
+}
+
+.d-input {
+    @apply w-full;
+}
+
+.d-input:focus,
+.d-input:focus-within {
+    outline: 0;
+}
+
+.sm\:d-btn-lg,
+.sm\:d-input-lg {
+    --d-fontsize: 0.875rem;
+    font-size: var(--d-fontsize);
+}
+
+
+/* Small Tablet: 640px [sm] */
+@media (width >= 40rem) {
+    .d-fieldset-legend {
+        @apply text-base;
+    }
+}

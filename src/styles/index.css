@@ -1,0 +1,144 @@
+/* Import css frameworks */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --font-inter: 'Inter', sans-serif;
+
+    --text-xssm: 0.813rem;             /* 13px */
+
+    --breakpoint-xxs: 22.5rem;         /* 360px */
+    --breakpoint-xs: 30rem;            /* 480px */
+    --breakpoint-mdlg: 59.375rem;      /* 950px */
+
+    --color-*: initial;
+    --color-neutral-50: #E7E7E8;
+    --color-neutral-100: #B3B6B6;
+    --color-neutral-200: #8F9293;
+    --color-neutral-300: #5C6062;
+    --color-neutral-400: #3C4144;
+    --color-neutral-500: #0B1215;
+    --color-neutral-600: #0A1013;
+    --color-neutral-700: #080D0F;
+    --color-neutral-800: #060A0C;
+    --color-neutral-900: #050809;
+
+    --color-primary-50: #E6E9F2;
+    --color-primary-100: #B0BBD7;
+    --color-primary-200: #8A9AC3;
+    --color-primary-300: #546CA8;
+    --color-primary-400: #334F97;
+    --color-primary-500: #00237D;
+    --color-primary-600: #002072;
+    --color-primary-700: #001959;
+    --color-primary-800: #001959;
+    --color-primary-900: #000F35;
+
+    --color-secondary-500: #EDEDED;
+    --color-secondary-600: #E8E8E8;
+    --color-secondary-700: #E8E8E8;
+    --color-secondary-800: #8C8C8C;
+    --color-secondary-900: #6B6B6B;
+
+    --color-accent-50: #FCE7EA;
+    --color-accent-100: #F7B4BE;
+    --color-accent-200: #F3909F;
+    --color-accent-300: #ED5D73;
+    --color-accent-400: #E93D58;
+    --color-accent-500: #E40D2E;
+    --color-accent-600: #CF0C2A;
+    --color-accent-700: #A20921;
+    --color-accent-800: #7D0719;
+    --color-accent-900: #600513;
+
+    --color-green-200: #1FC16B;
+    --color-green-300: #178C4E;
+
+    --color-yellow-200: #DFB400;
+    --color-yellow-300: #B89300;
+
+    --color-white: #FFFFFF;
+    --color-black: #0B1215;
+}
+
+@plugin "daisyui" { 
+    prefix: "d-"; 
+    exclude: rootscrollgutter; 
+    themes: light --default;
+}
+
+@plugin "daisyui/theme" {
+    name: "brandTheme";
+    default: true;
+    prefersdark: false;
+    color-scheme: light;
+
+    --color-base-content: var(--color-neutral-500);
+
+    --color-primary: var(--color-primary-500);
+    --color-primary-content: var(--color-primary-50);
+    --color-secondary: var(--color-secondary-500);
+    --color-secondary-content: var(--color-secondary-900);
+    --color-accent: var(--color-accent-500);
+    --color-accent-content: var(--color-accent-50);
+    --color-success: var(--color-green-200);
+    --color-success-content: var(--color-green-300);
+    --color-warning: var(--color-yellow-200);
+    --color-warning-content: var(--color-yellow-300);
+    --color-error: var(--color-accent-600);
+    --color-error-content: var(--color-accent-50);
+
+    --radius-field: 0.5rem;
+}
+
+
+:root {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+
+    color-scheme: light;
+    color: var(--color-black);
+    background-color: var(--color-white);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.lucide {
+    height: auto;
+    stroke-width: 1.5;
+}
+
+.lucide * {
+    vector-effect: non-scaling-stroke;
+}
+
+body {
+    background-color: var(--color-white);
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    height: auto;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.25s ease-in-out;
+}
+button:focus,
+button:focus-visible {
+    box-shadow: unset;
+}
