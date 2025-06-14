@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
+@import "./daisyui-custom.css";
 
 @theme {
     --font-inter: 'Inter', sans-serif;
@@ -60,17 +61,6 @@
     --color-black: #0B1215;
 }
 
-@utility d-btn-lg {
-    --d-fontsize: 0.875rem;
-}
-
-@utility d-input-lg {
-    --d-size: 44px;
-    font-size: 0.875rem;
-    gap: 12px;
-    padding: 0 16px;
-}
-
 
 @plugin "daisyui" { 
     prefix: "d-"; 
@@ -103,21 +93,48 @@
 }
 
 
-:root {
-    font-family: var(--font-inter), sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
+/* Base styles using Tailwind's @layer */
+@layer base {
+    :root {
+        font-family: var(--font-inter), sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        color-scheme: light;
+        color: var(--color-black);
+        background-color: var(--color-white);
+        font-synthesis: none;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
 
-    color-scheme: light;
-    color: var(--color-black);
-    background-color: var(--color-white);
+    body {
+        background-color: var(--color-white);
+        margin: 0;
+        padding: 0;
+    }
 
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    img {
+        height: auto;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    button {
+        font-weight: 600;
+        font-family: inherit;
+        cursor: pointer;
+        transition: border-color 0.25s ease-in-out;
+    }
+    button:focus-visible {
+        box-shadow: unset;
+    }
 }
 
+
+/* Lucide icon tweaks */
 .lucide {
     height: auto;
     stroke-width: 1.5;
@@ -125,30 +142,4 @@
 
 .lucide * {
     vector-effect: non-scaling-stroke;
-}
-
-body {
-    background-color: var(--color-white);
-    margin: 0;
-    padding: 0;
-}
-
-img {
-    height: auto;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-button {
-    border-radius: 0.5rem;
-    font-weight: 600;
-    font-family: inherit;
-    cursor: pointer;
-    transition: border-color 0.25s ease-in-out;
-}
-button:focus,
-button:focus-visible {
-    box-shadow: unset;
 }

@@ -10,7 +10,7 @@ const LoginPage = () => {
     return (
         <div className="b-login-page">
             {/* Banner Section */}
-            <div className="b-banner bg-primary-500 text-white gap-4 -mb-4 xs:gap-10 lg:mb-0 lg:gap-6">
+            <div className="b-banner bg-accent-500">
                 <div className="flex items-center justify-start w-full gap-2 lg:gap-3">
                     <img src={WhiteLogo} className="w-[24px] sm:w-[28px]" alt="crediNova logo" />
                     <span className="font-medium xs:text-lg lg:text-xl">CrediNova</span>
@@ -31,7 +31,7 @@ const LoginPage = () => {
 
             {/* Login Section */}
             <div className="b-login">
-                <div className="b-login-main flex-1">
+                <div className="b-login-main">
 
                     <div className="w-full flex flex-col gap-4 lg:max-w-[420px] lg:gap-5">
                         <div className="text-start w-full">
@@ -86,7 +86,7 @@ const LoginPage = () => {
                                 </fieldset>
 
                                 <div className="text-end text-xs font-medium mt-2 sm:text-xs">
-                                    <a href="#" className="b-text-link">Forget Password?</a>
+                                    <a href="#" className="text-primary">Forget Password?</a>
                                 </div>
                             </div>
                         </form>
@@ -106,7 +106,7 @@ const LoginPage = () => {
                         {/* Register Link */}
                         <div className="w-full text-center pt-4">
                             <p className="text-xs text-neutral-300 sm:text-xs">
-                                Don't have an account? <a href="#" className="font-medium b-text-link">Register Here</a>
+                                Don't have an account? <a href="#" className="font-medium text-primary">Register Here</a>
                             </p>
                         </div>
                     </div>
@@ -114,7 +114,7 @@ const LoginPage = () => {
                 </div>
 
                 {/* Footer Section */}            
-                <div className="b-login-footer w-full hidden sm:flex justify-between text-xs text-neutral-300">
+                <div className="b-login-footer">
                     <p>© 2025 All rights reserved</p>
 
                     <div className="flex gap-4">

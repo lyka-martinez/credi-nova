@@ -1,0 +1,30 @@
+/* Daisyui Component Customization */
+
+@utility d-btn-ghost {
+    border: none;
+}
+
+@utility d-btn-lg {
+    --d-fontsize: 0.875rem;
+}
+
+@utility d-input-lg {
+    --d-size: 44px;
+    font-size: 0.875rem;
+    gap: 12px;
+    padding: 0 16px;
+}
+
+@utility d-input {
+    width: 100%;
+
+    &:focus, &:focus-within {
+        outline: 0;
+        --d-input-color: var(--color-primary-500);
+    }
+}
+
+@utility d-fieldset-legend {
+    font-size: 0.875rem;
+    font-weight: 500;
+}

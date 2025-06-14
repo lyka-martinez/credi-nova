@@ -1,4 +1,4 @@
-/* Reference index css */
+/* Reference index.css for base styles */
 @reference "./index.css";
 
 
@@ -9,7 +9,9 @@
     flex 
     flex-col 
     items-center 
-    justify-between;
+    justify-between
+
+    lg:flex-row;
 }
 
 .b-banner,
@@ -21,7 +23,11 @@
     flex
     flex-col
     items-center
-    justify-start;
+    justify-start
+
+    lg:h-full
+    lg:min-h-fit
+    lg:justify-center;
 }
 
 .b-login {
@@ -30,84 +36,71 @@
     flex-1
     justify-start
     rounded-t-2xl
-    z-[2];
+    z-[2]
+
+    lg:rounded-none 
+    lg:z-[1];
 }
 
 .b-banner,
 .b-login-main,
 .b-login-footer {
-    @apply p-[28px];
+    @apply 
+    p-[28px]
+
+    md:py-[32px]
+    md:px-[60px];
+}
+
+.b-login-main {
+    @apply
+    flex-1
+    lg:pb-0;
 }
 
 .b-banner {
     @apply 
+    text-white 
+    bg-primary-500 
     pb-[48px] 
-    z-[1];
+    gap-4 
+    -mb-4 
+    z-[1]
+    
+    xs:gap-10 
+    
+    md:pb-[56px]
+    
+    lg:mb-0 
+    lg:gap-6
+    lg:pb-[32px]
+    lg:w-[40%]
+    lg:max-w-[640px]
+    lg:z-[2];
 }
 
 .b-banner::after {
-    @apply absolute opacity-[0.05] inset-0 w-full h-full -z-[1];
+    @apply 
+    absolute 
+    opacity-[0.05] 
+    inset-0 
+    w-full 
+    h-full 
+    -z-[1];
     content: '';
     background: url("../assets/images/pattern.png") no-repeat center center/cover;
 }
 
-
-/* Standard Tablet: 768px [md] */
-@media (width >= 48rem) {
-    .b-banner,
-    .b-login-main,
-    .b-login-footer {
-        @apply
-        py-[32px]
-        px-[60px];
-    }
-
-    .b-banner {
-        @apply pb-[56px];
-    }
-}
-
-
-/* Small Laptop: 1024px [lg] */
-@media (width >= 64rem) {
-    .b-login-page {
-        @apply flex-row;
-    }
+.b-login-footer {
+    @apply
+    w-full 
+    justify-between 
+    text-xs 
+    text-neutral-300
+    hidden 
     
-    .b-banner {
-        @apply 
-        pb-[32px]
-        w-[40%]
-        max-w-[640px]
-        z-[2];
-    }
-
-    .b-login-footer {
-        @apply 
-        px-[48px] 
-        pt-0;
-    }
-
-    .b-login-main {
-        @apply pb-0;
-    }
-
-    .b-banner,
-    .b-login,
-    .b-login-main {
-        @apply
-        h-full
-        min-h-fit
-        justify-center;
-    }
-
-    .b-login {
-        @apply 
-        rounded-none 
-        z-[1];
-    }
-
-    .b-banner::after {
-        @apply -z-[1];
-    }
+    sm:flex 
+    
+    lg:px-[48px] 
+    lg:pt-0;
 }

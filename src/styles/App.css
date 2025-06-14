@@ -1,4 +1,4 @@
-/* Reference index css */
+/* Reference index.css for base styles */
 @reference "./index.css";
 
 
@@ -8,29 +8,4 @@
     min-w-xs 
     min-h-lvh 
     max-w-lvw;
-}
-
-.b-text-link {
-    @apply text-primary;
-}
-
-
-/* DaisyUI and global overrides */
-.d-fieldset-legend {
-    @apply
-    font-medium
-    text-sm;
-}
-
-.d-input {
-    @apply w-full;
-}
-
-.d-input:focus,
-.d-input:focus-within {
-    outline: 0;
-}
-
-.d-btn-ghost {
-    border: none;
 }
