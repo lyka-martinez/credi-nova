@@ -40,7 +40,9 @@
 }
 
 .b-banner {
-    @apply pb-[48px] z-[1];
+    @apply 
+    pb-[48px] 
+    z-[1];
 }
 
 .b-banner::after {
@@ -81,7 +83,13 @@
     }
 
     .b-login-footer {
-        @apply px-[48px] pt-0;
+        @apply 
+        px-[48px] 
+        pt-0;
+    }
+
+    .b-login-main {
+        @apply pb-0;
     }
 
     .b-banner,
@@ -94,7 +102,9 @@
     }
 
     .b-login {
-        @apply rounded-none z-[1];
+        @apply 
+        rounded-none 
+        z-[1];
     }
 
     .b-banner::after {

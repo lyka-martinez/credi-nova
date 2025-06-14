@@ -2,6 +2,39 @@
 @reference "./index.css";
 
 
+.d-drawer {
+    @apply h-screen;
+}
+
+.d-drawer-content {
+    @apply
+    flex 
+    flex-col 
+    justify-center;
+}
+
+.d-navbar,
+.b-content {
+    @apply
+    px-4 
+    py-3;
+}
+
+.d-navbar {
+    @apply
+    min-h-[56px]
+    justify-between
+    bg-base-100 
+    border-b 
+    border-neutral-50;
+}
+
+.b-content {
+    @apply
+    flex-1
+    bg-secondary-600/25; 
+}
+
 .d-menu a:hover {
     text-decoration: none;
 }
@@ -13,6 +46,12 @@
 
 .d-menu a,
 .d-menu summary {
-    padding-inline: 14px;
-    padding-block: 11.5px;
+    @apply
+    py-[9.5px];
+    /* padding-inline: 14px; */
+}
+
+.d-badge-xxs {
+    --d-size: 0.5rem;
+    padding: 0.25rem;
 }

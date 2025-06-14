@@ -6,8 +6,6 @@
 @theme {
     --font-inter: 'Inter', sans-serif;
 
-    --text-xssm: 0.813rem;             /* 13px */
-
     --breakpoint-xxs: 22.5rem;         /* 360px */
     --breakpoint-xs: 30rem;            /* 480px */
     --breakpoint-mdlg: 59.375rem;      /* 950px */
@@ -61,6 +59,18 @@
     --color-white: #FFFFFF;
     --color-black: #0B1215;
 }
+
+@utility d-btn-lg {
+    --d-fontsize: 0.875rem;
+}
+
+@utility d-input-lg {
+    --d-size: 44px;
+    font-size: 0.875rem;
+    gap: 12px;
+    padding: 0 16px;
+}
+
 
 @plugin "daisyui" { 
     prefix: "d-"; 

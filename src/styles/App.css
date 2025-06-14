@@ -31,16 +31,6 @@
     outline: 0;
 }
 
-.sm\:d-btn-lg,
-.sm\:d-input-lg {
-    --d-fontsize: 0.875rem;
-    font-size: var(--d-fontsize);
-}
-
-
-/* Small Tablet: 640px [sm] */
-@media (width >= 40rem) {
-    .d-fieldset-legend {
-        @apply text-base;
-    }
+.d-btn-ghost {
+    border: none;
 }

@@ -16,7 +16,7 @@ const LoginPage = () => {
                     <span className="font-medium xs:text-lg lg:text-xl">CrediNova</span>
                 </div>
 
-                <img src={Banner} alt="Finance Banner" className="w-[80%] h-auto hidden lg:block" />
+                <img src={Banner} alt="Finance Banner" className="w-auto h-[50%] max-h-[380px] hidden lg:block" />
 
                 <div className="text-start w-full">
                     <h1 className="text-lg font-medium tracking-wider mb-2 sm:text-2xl lg:text-3xl lg:mb-5">
@@ -33,12 +33,12 @@ const LoginPage = () => {
             <div className="b-login">
                 <div className="b-login-main flex-1">
 
-                    <div className="w-full flex flex-col gap-4 lg:max-w-[420px]">
+                    <div className="w-full flex flex-col gap-4 lg:max-w-[420px] lg:gap-5">
                         <div className="text-start w-full">
-                            <h2 className="hidden text-3xl font-bold mb-2 lg:block">
+                            <h2 className="hidden text-3xl font-bold mb-2 lg:block lg:mb-3">
                                 Welcome Back
                             </h2>
-                            <p className="text-sm text-neutral-300 sm:text-base">
+                            <p className="text-sm text-neutral-300">
                                 Enter your Email and Password to Log In.
                             </p>
                         </div>
@@ -49,7 +49,7 @@ const LoginPage = () => {
                                 <legend className="d-fieldset-legend">Email</legend>
 
                                 <label className="d-input d-validator sm:d-input-lg">
-                                    <Mail className="w-[18px] sm:w-[20px] sm:h-[20px]" />
+                                    <Mail className="w-[16px] sm:w-[18px]" />
                                     <input type="email" placeholder="Enter email address" required />
                                 </label>
 
@@ -63,8 +63,8 @@ const LoginPage = () => {
                                 <fieldset className="d-fieldset">
                                     <legend className="d-fieldset-legend">Password</legend>
 
-                                    <label className="d-input d-validator pe-0 sm:d-input-lg">
-                                        <LockKeyhole className="w-[18px] sm:w-[20px] sm:h-[20px]" />
+                                    <label className="d-input d-validator sm:d-input-lg">
+                                        <LockKeyhole className="w-[16px] sm:w-[18px]" />
                                         <input
                                             type="password"
                                             required
@@ -74,8 +74,8 @@ const LoginPage = () => {
                                             title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
                                         />
 
-                                        <button type="button" className="btn btn-ghost h-full px-3">
-                                            <EyeOff className="w-[18px] text-neutral-200 sm:w-[20px]" />
+                                        <button type="button" className="btn btn-ghost h-full px-1">
+                                            <EyeOff className="w-[16px] text-neutral-200 sm:w-[18px]" />
                                         </button>
                                     </label>
 
@@ -85,19 +85,19 @@ const LoginPage = () => {
                                     </div>
                                 </fieldset>
 
-                                <div className="text-end text-xs font-medium mt-2 sm:text-xssm">
+                                <div className="text-end text-xs font-medium mt-2 sm:text-xs">
                                     <a href="#" className="b-text-link">Forget Password?</a>
                                 </div>
                             </div>
                         </form>
 
                         {/* Form Buttons */}
-                        <div className="w-full flex flex-col gap-2 pt-4">
+                        <div className="w-full flex flex-col gap-2 pt-4 lg:gap-3">
                             <button className="d-btn d-btn-accent sm:d-btn-lg">Log In</button>
 
-                            <div className="d-divider text-xs text-neutral-300 my-2 sm:text-xssm">Or Log In With</div>
+                            <div className="d-divider text-xs text-neutral-300 my-2 sm:text-xs">Or Log In With</div>
 
-                            <button className="d-btn bg-white border-neutral-100 sm:d-btn-lg hover:bg-secondary-500/50">
+                            <button className="d-btn bg-white border-neutral-100 sm:d-btn-lg hover:bg-secondary-500/60">
                                 <img src={Google} className="w-[18px] sm:w-[20px]" alt="crediNova logo" />
                                 Google
                             </button>
@@ -105,7 +105,7 @@ const LoginPage = () => {
 
                         {/* Register Link */}
                         <div className="w-full text-center pt-4">
-                            <p className="text-xs text-neutral-300 sm:text-xssm">
+                            <p className="text-xs text-neutral-300 sm:text-xs">
                                 Don't have an account? <a href="#" className="font-medium b-text-link">Register Here</a>
                             </p>
                         </div>
@@ -114,7 +114,7 @@ const LoginPage = () => {
                 </div>
 
                 {/* Footer Section */}            
-                <div className="b-login-footer w-full hidden sm:flex justify-between text-xssm text-neutral-300">
+                <div className="b-login-footer w-full hidden sm:flex justify-between text-xs text-neutral-300">
                     <p>© 2025 All rights reserved</p>
 
                     <div className="flex gap-4">
