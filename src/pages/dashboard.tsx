@@ -15,17 +15,18 @@ import {
     ChartNoAxesCombined,
     HandCoins,
     ChevronRight,
+    ArrowUpRight,
 } from 'lucide-react'
 
 const Dashboard = () => {
     return (
-        <div className="d-drawer lg:d-drawer-open h-screen">
+        <div className="d-drawer lg:d-drawer-open h-full">
             <input id="my-drawer" type="checkbox" className="d-drawer-toggle" />
 
             {/* Page content */}
             <div className="d-drawer-content flex flex-col justify-center">
                 {/* Navbar */}
-                <div className="d-navbar bg-base-100 h-[65px] justify-between border-b border-neutral-50 px-4 py-0">
+                <div className="d-navbar bg-base-100 sticky top-0 z-1 h-[65px] justify-between border-b border-neutral-50 px-4 py-0">
                     <div className="navbar-start flex items-center gap-2 lg:hidden">
                         <img
                             src="./logo.svg"
@@ -158,7 +159,7 @@ const Dashboard = () => {
 
                     {/* Payments */}
                     <div className="grid grid-flow-row auto-rows-min gap-4 lg:grid-cols-4">
-                        <div className="d-card d-card-sm border border-neutral-50 bg-white shadow-2xs">
+                        <div className="d-card d-card-sm border border-neutral-50 bg-white text-neutral-400 shadow-2xs">
                             <div className="d-card-body gap-2">
                                 <div className="d-card-title mb-2">
                                     Payment Summary
@@ -229,8 +230,37 @@ const Dashboard = () => {
                             </div>
                         </div>
 
-                        <div className="rounded-lg border border-neutral-50 bg-white p-4 shadow-2xs lg:col-span-3 ">
+                        {/* Repayment Schedule Table */}
+                        <div className="flex flex-col rounded-lg border border-neutral-50 bg-white shadow-2xs lg:col-span-3">
+                            <div className="flex items-start justify-between px-4 py-3">
+                                <div className="text-sm font-medium">
+                                    Repayment Schedule
+                                </div>
+                                <button className="d-btn d-btn-ghost d-btn-sm bg-secondary-600/30 hover:bg-secondary-600/60 h-[28px] gap-1 rounded-sm px-2 font-medium text-neutral-300">
+                                    View more
+                                    <ArrowUpRight className="w-[14px]" />
+                                </button>
+                            </div>
+
+                            <div className="">Table goes here..</div>
+                        </div>
+                    </div>
+
+                    {/* Loans */}
+                    <div className="grid grid-flow-row auto-rows-min gap-4 lg:grid-cols-6">
+                        <div className="rounded-lg border border-neutral-50 bg-white p-4 shadow-2xs lg:col-span-4">
                             Table goes here..
+                        </div>
+
+                        <div className="d-card d-card-sm border border-neutral-50 bg-white shadow-2xs lg:col-span-2">
+                            <div className="d-card-body gap-2">
+                                <div className="d-card-title mb-2">
+                                    Loan Distribution
+                                </div>
+
+                                {/* Loan Distribution Graph */}
+                                <div>Graph goes here..</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -244,15 +274,15 @@ const Dashboard = () => {
                     className="d-drawer-overlay"
                 ></label>
 
-                <ul className="d-menu min-h-full w-70 border-r-1 border-neutral-50 bg-white p-4">
-                    <div className="mb-4">
+                <ul className="d-menu lg:d-menu-lg min-h-full w-70 border-r-1 border-neutral-50 bg-white p-4 lg:p-[18px]">
+                    <div className="mb-4 lg:mb-6">
                         <div className="flex items-center justify-start gap-3">
                             <img
                                 src="./logo.svg"
-                                className="w-[24px]"
+                                className="w-[24px] lg:w-[28px]"
                                 alt="CrediNova logo"
                             />
-                            <span className="text-base font-semibold">
+                            <span className="text-base font-semibold lg:text-lg">
                                 CrediNova
                             </span>
                         </div>
@@ -260,14 +290,14 @@ const Dashboard = () => {
 
                     <li>
                         <a className="d-menu-active">
-                            <LayoutGrid className="w-[16px]" />
+                            <LayoutGrid className="w-[16px] lg:w-[18px]" />
                             Dashboard
                         </a>
                     </li>
                     <li>
                         <details>
                             <summary>
-                                <FileText className="w-[16px]" />
+                                <FileText className="w-[16px] lg:w-[18px]" />
                                 Loans
                             </summary>
                             <ul>
@@ -282,14 +312,14 @@ const Dashboard = () => {
                     </li>
                     <li>
                         <a>
-                            <FilePen className="w-[16px]" />
+                            <FilePen className="w-[16px] lg:w-[18px]" />
                             Apply New Loan
                         </a>
                     </li>
                     <li>
                         <details>
                             <summary>
-                                <CreditCard className="w-[16px]" />
+                                <CreditCard className="w-[16px] lg:w-[18px]" />
                                 Payments
                             </summary>
                             <ul>
@@ -304,19 +334,19 @@ const Dashboard = () => {
                     </li>
                     <li>
                         <a>
-                            <ChartPie className="w-[16px]" />
+                            <ChartPie className="w-[16px] lg:w-[18px]" />
                             Reports
                         </a>
                     </li>
                     <li className="mt-auto">
                         <a>
-                            <Headset className="w-[16px]" />
+                            <Headset className="w-[16px] lg:w-[18px]" />
                             Help Center
                         </a>
                     </li>
                     <li>
                         <a>
-                            <Settings className="w-[16px]" />
+                            <Settings className="w-[16px] lg:w-[18px]" />
                             Settings
                         </a>
                     </li>

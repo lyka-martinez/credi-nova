@@ -69,6 +69,14 @@
     }
 }
 
+@utility d-menu-lg {
+    :where(li:not(.d-menu-title) > *:not(ul, details, .d-menu-title)),
+    :where(li:not(.d-menu-title) > details > summary:not(.d-menu-title)) {
+        font-size: 14px;
+        padding-block: 11.5px;
+    }
+}
+
 @utility d-tooltip {
     > :where(.d-tooltip-content),
     &:where([data-tip]):before {
@@ -81,6 +89,7 @@
 @utility d-card-title {
     font-weight: 500;
     align-items: start;
+    justify-content: space-between;
 }
 
 @utility d-card-sm {
