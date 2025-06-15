@@ -1,0 +1,87 @@
+/* Daisyui Component Customization */
+
+@utility d-btn-ghost {
+    border-color: transparent;
+}
+
+@utility d-btn-lg {
+    --d-fontsize: 0.875rem;
+}
+
+@utility d-input-lg {
+    --d-size: 44px;
+    font-size: 0.875rem;
+    gap: 12px;
+    padding: 0 16px;
+}
+
+@utility d-input {
+    width: 100%;
+
+    &:focus, &:focus-within {
+        outline: 0;
+        --d-input-color: var(--color-primary-500);
+    }
+}
+
+@utility d-fieldset-legend {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+@utility d-badge-xxs {
+    --d-size: 0.5rem;
+    padding: 0.25rem;
+}
+
+@utility d-menu {
+    font-weight: 500;
+    --d-menu-active-bg: var(--color-primary-500);
+    --d-menu-active-fg: var(--color-white);
+
+    :where(a, summary) {
+        gap: 12px;
+        padding-block: 9.5px;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    :where(li:not(.d-menu-title) > *:not(ul, details, .d-menu-title, .d-btn)), 
+    :where(li:not(.d-menu-title) > details > summary:not(.d-menu-title)) {
+        color: var(--color-neutral-400);
+    }
+
+    :where(
+        li:not(.menu-title, .disabled) > *:not(ul, details, .menu-title):not(.menu-active, :active, .btn):hover,
+        li:not(.menu-title, .disabled) > details > summary:not(.menu-title):not(.menu-active, :active, .btn):hover
+    ) {
+        color: var(--color-neutral-500);    
+    }
+}
+
+@utility d-tooltip {
+    > :where(.d-tooltip-content),
+    &:where([data-tip]):before {
+        font-weight: 400;
+        border-radius: 4px;
+        padding-block: 6px;
+    }
+}
+
+@utility d-card-title {
+    font-weight: 500;
+    align-items: start;
+}
+
+@utility d-card-sm {
+    .d-card-title {
+        font-size: 14px;
+    }
+
+    .d-card-body {
+        font-size: 14px;
+        padding-block: 12px;
+    }
+}

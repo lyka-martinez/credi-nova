@@ -3,7 +3,7 @@ import { Mail, LockKeyhole, EyeOff } from 'lucide-react';
 import WhiteLogo from '../assets/images/logo-white.webp';
 import Google from '../assets/images/google-logo.png';
 import Banner from '../assets/images/banner.png';
-import '../styles/loginPage.css';
+import '../styles/loginpage.css';
 
 
 const LoginPage = () => {

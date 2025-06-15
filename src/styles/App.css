@@ -9,3 +9,18 @@
     min-h-lvh 
     max-w-lvw;
 }
+
+.b-payment-summary-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover .b-chevron-animate {
+        transform: translateX(4px);
+        transition: transform 0.2s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    .b-chevron-animate {
+        transition: transform 0.2s cubic-bezier(0.4,0,0.2,1);
+    }
+}

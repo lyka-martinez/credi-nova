@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
-@import "./daisyui-custom.css";
+@import "./daisyuicustom.css";
 
 @theme {
     --font-inter: 'Inter', sans-serif;
@@ -36,7 +36,7 @@
 
     --color-secondary-500: #EDEDED;
     --color-secondary-600: #E8E8E8;
-    --color-secondary-700: #E8E8E8;
+    --color-secondary-700: #B5B5B5;
     --color-secondary-800: #8C8C8C;
     --color-secondary-900: #6B6B6B;
 
@@ -75,6 +75,7 @@
     color-scheme: light;
 
     --color-base-content: var(--color-neutral-500);
+    --color-neutral: var(--color-neutral-500);
 
     --color-primary: var(--color-primary-500);
     --color-primary-content: var(--color-primary-50);
