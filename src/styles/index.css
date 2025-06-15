@@ -1,75 +1,74 @@
 /* Import css frameworks */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import "tailwindcss";
-@import "./daisyuicustom.css";
+@import 'tailwindcss';
+@import './daisyuicustom.css';
 
 @theme {
     --font-inter: 'Inter', sans-serif;
 
-    --breakpoint-xxs: 22.5rem;         /* 360px */
-    --breakpoint-xs: 30rem;            /* 480px */
-    --breakpoint-mdlg: 59.375rem;      /* 950px */
+    --breakpoint-xxs: 22.5rem; /* 360px */
+    --breakpoint-xs: 30rem; /* 480px */
+    --breakpoint-mdlg: 59.375rem; /* 950px */
 
     --color-*: initial;
-    --color-neutral-50: #E7E7E8;
-    --color-neutral-100: #B3B6B6;
-    --color-neutral-200: #8F9293;
-    --color-neutral-300: #5C6062;
-    --color-neutral-400: #3C4144;
-    --color-neutral-500: #0B1215;
-    --color-neutral-600: #0A1013;
-    --color-neutral-700: #080D0F;
-    --color-neutral-800: #060A0C;
+    --color-neutral-50: #e7e7e8;
+    --color-neutral-100: #b3b6b6;
+    --color-neutral-200: #8f9293;
+    --color-neutral-300: #5c6062;
+    --color-neutral-400: #3c4144;
+    --color-neutral-500: #0b1215;
+    --color-neutral-600: #0a1013;
+    --color-neutral-700: #080d0f;
+    --color-neutral-800: #060a0c;
     --color-neutral-900: #050809;
 
-    --color-primary-50: #E6E9F2;
-    --color-primary-100: #B0BBD7;
-    --color-primary-200: #8A9AC3;
-    --color-primary-300: #546CA8;
-    --color-primary-400: #334F97;
-    --color-primary-500: #00237D;
+    --color-primary-50: #e6e9f2;
+    --color-primary-100: #b0bbd7;
+    --color-primary-200: #8a9ac3;
+    --color-primary-300: #546ca8;
+    --color-primary-400: #334f97;
+    --color-primary-500: #00237d;
     --color-primary-600: #002072;
     --color-primary-700: #001959;
     --color-primary-800: #001959;
-    --color-primary-900: #000F35;
+    --color-primary-900: #000f35;
 
-    --color-secondary-500: #EDEDED;
-    --color-secondary-600: #E8E8E8;
-    --color-secondary-700: #B5B5B5;
-    --color-secondary-800: #8C8C8C;
-    --color-secondary-900: #6B6B6B;
+    --color-secondary-500: #ededed;
+    --color-secondary-600: #e8e8e8;
+    --color-secondary-700: #b5b5b5;
+    --color-secondary-800: #8c8c8c;
+    --color-secondary-900: #6b6b6b;
 
-    --color-accent-50: #FCE7EA;
-    --color-accent-100: #F7B4BE;
-    --color-accent-200: #F3909F;
-    --color-accent-300: #ED5D73;
-    --color-accent-400: #E93D58;
-    --color-accent-500: #E40D2E;
-    --color-accent-600: #CF0C2A;
-    --color-accent-700: #A20921;
-    --color-accent-800: #7D0719;
+    --color-accent-50: #fce7ea;
+    --color-accent-100: #f7b4be;
+    --color-accent-200: #f3909f;
+    --color-accent-300: #ed5d73;
+    --color-accent-400: #e93d58;
+    --color-accent-500: #e40d2e;
+    --color-accent-600: #cf0c2a;
+    --color-accent-700: #a20921;
+    --color-accent-800: #7d0719;
     --color-accent-900: #600513;
 
-    --color-green-200: #1FC16B;
-    --color-green-300: #178C4E;
+    --color-green-200: #1fc16b;
+    --color-green-300: #178c4e;
 
-    --color-yellow-200: #DFB400;
-    --color-yellow-300: #B89300;
+    --color-yellow-200: #dfb400;
+    --color-yellow-300: #b89300;
 
-    --color-white: #FFFFFF;
-    --color-black: #0B1215;
+    --color-white: #ffffff;
+    --color-black: #0b1215;
 }
 
-
-@plugin "daisyui" { 
-    prefix: "d-"; 
-    exclude: rootscrollgutter; 
+@plugin "daisyui" {
+    prefix: 'd-';
+    exclude: rootscrollgutter;
     themes: light --default;
 }
 
 @plugin "daisyui/theme" {
-    name: "brandTheme";
+    name: 'brandTheme';
     default: true;
     prefersdark: false;
     color-scheme: light;
@@ -92,7 +91,6 @@
 
     --radius-field: 0.5rem;
 }
-
 
 /* Base styles using Tailwind's @layer */
 @layer base {
@@ -133,7 +131,6 @@
         box-shadow: unset;
     }
 }
-
 
 /* Lucide icon tweaks */
 .lucide {

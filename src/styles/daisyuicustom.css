@@ -18,7 +18,8 @@
 @utility d-input {
     width: 100%;
 
-    &:focus, &:focus-within {
+    &:focus,
+    &:focus-within {
         outline: 0;
         --d-input-color: var(--color-primary-500);
     }
@@ -48,16 +49,23 @@
         text-decoration: none;
     }
 
-    :where(li:not(.d-menu-title) > *:not(ul, details, .d-menu-title, .d-btn)), 
+    :where(li:not(.d-menu-title) > *:not(ul, details, .d-menu-title, .d-btn)),
     :where(li:not(.d-menu-title) > details > summary:not(.d-menu-title)) {
         color: var(--color-neutral-400);
     }
 
     :where(
-        li:not(.menu-title, .disabled) > *:not(ul, details, .menu-title):not(.menu-active, :active, .btn):hover,
-        li:not(.menu-title, .disabled) > details > summary:not(.menu-title):not(.menu-active, :active, .btn):hover
+        li:not(.menu-title, .disabled)
+            > *:not(ul, details, .menu-title):not(
+                .menu-active,
+                :active,
+                .btn
+            ):hover,
+        li:not(.menu-title, .disabled)
+            > details
+            > summary:not(.menu-title):not(.menu-active, :active, .btn):hover
     ) {
-        color: var(--color-neutral-500);    
+        color: var(--color-neutral-500);
     }
 }
 
