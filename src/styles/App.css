@@ -23,6 +23,16 @@
     }
 }
 
+.b-app-container {
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+
+    &.b-fade-out {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
 /* Responsive table styles [only below medium screens] */
 @media (width < 48rem) {
     .b-responsive-table tr {
@@ -33,7 +43,7 @@
     .b-responsive-table td {
         display: flex;
         justify-content: space-between;
-          height: 32px;
+        height: 32px;
     }
 
     .b-responsive-table td::before {

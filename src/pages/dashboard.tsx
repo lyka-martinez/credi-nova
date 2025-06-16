@@ -1,28 +1,26 @@
 import { memo } from 'react'
-import Profile from '../assets/images/profile.png'
 import {
-    LayoutGrid,
-    FileText,
-    FilePen,
-    CreditCard,
-    ChartPie,
-    Headset,
-    Settings,
-    Menu,
-    Bell,
-    Search,
     BanknoteArrowUp,
     CalendarClock,
     ChartNoAxesCombined,
     HandCoins,
     ChevronRight,
     ArrowUpRight,
-    ChevronsUpDown,
-    User,
-    LogOut,
 } from 'lucide-react'
+import Sidebar from './sidebar'
+import Navbar from './navbar'
 
-const Dashboard = () => {
+/**
+ * Dashboard component
+ * @param onLogout - Callback function to handle logout action
+ * @returns JSX.Element
+ */
+
+type DashboardProps = {
+    onLogout: () => void
+}
+
+const Dashboard = ({ onLogout }: DashboardProps) => {
     return (
         <div className="d-drawer lg:d-drawer-open h-full">
             <input id="my-drawer" type="checkbox" className="d-drawer-toggle" />
@@ -30,96 +28,8 @@ const Dashboard = () => {
             {/* Page content */}
             <div className="d-drawer-content flex flex-col justify-center">
                 {/* Navbar */}
-                <div className="d-navbar bg-base-100 sticky top-0 z-1 min-h-[60px] justify-between border-b border-neutral-50 px-4 py-0 md:px-8 lg:px-6">
-                    <div className="d-navbar-start">
-                        <div className="flex items-center gap-2 lg:hidden">
-                            <img
-                                src="./logo.svg"
-                                className="w-[24px]"
-                                alt="CrediNova logo"
-                            />
-                            <span className="text-base font-semibold">
-                                CrediNova
-                            </span>
-                        </div>
-
-                        {/* Search area [show only in large screens] */}
-                        <form className="hidden items-center gap-2 lg:flex">
-                            <label className="d-input h-[34px] text-xs">
-                                <Search className="w-[18px]" />
-                                <input
-                                    type="search"
-                                    className="grow"
-                                    placeholder="Search anything here.."
-                                />
-                            </label>
-                        </form>
-                    </div>
-
-                    <div className="d-navbar-end lg:w-full lg:gap-2">
-                        {/* Notificaiton Button */}
-                        <button tabIndex={0} className="d-btn d-btn-ghost px-2">
-                            <div className="d-indicator">
-                                <Bell className="w-[20px]" />
-                                <div className="d-badge d-badge-xxs d-badge-accent d-indicator-item"></div>
-                            </div>
-                        </button>
-
-                        {/* User Profile Dropdown */}
-                        <div className="d-dropdown d-dropdown-end hidden lg:block">
-                            <div
-                                tabIndex={0}
-                                role="button"
-                                className="d-btn d-btn-ghost d-avatar gap-2 bg-transparent px-2 shadow-none"
-                            >
-                                <div className="w-9 rounded-full">
-                                    <img
-                                        alt="Tailwind CSS Navbar component"
-                                        src={Profile}
-                                    />
-                                </div>
-
-                                <p className="flex flex-col items-start justify-center text-xs">
-                                    <span className="font-medium">
-                                        John Doe
-                                    </span>
-                                    <span className="font-normal text-neutral-300">
-                                        jhondoe@gmail.com
-                                    </span>
-                                </p>
-
-                                <ChevronsUpDown className="w-[14px] text-neutral-300" />
-                            </div>
-
-                            <ul
-                                tabIndex={0}
-                                className="d-menu d-dropdown-content bg-base-100 rounded-box z-1 mt-2 w-52 border border-neutral-50 p-2 shadow-md"
-                            >
-                                <li>
-                                    <a className="gap-2 py-[6px]">
-                                        <User className="w-[14px]" />
-                                        Profile
-                                    </a>
-                                </li>
-                                <li>
-                                    <a className="text-accent-700 gap-2 py-[6px]">
-                                        <LogOut className="w-[14px]" />
-                                        Logout
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        {/* Drawer button [show only in medium screens] */}
-                        <label
-                            htmlFor="my-drawer"
-                            data-tip="Menu"
-                            className="d-btn d-btn-ghost d-drawer-button d-tooltip d-tooltip-bottom px-2 lg:hidden"
-                        >
-                            <Menu className="w-[20px]" />
-                        </label>
-                    </div>
-                </div>
+                <Navbar onLogout={onLogout} />
+                
 
                 {/* Main content */}
                 <div className="bg-secondary-600/30 flex flex-1 flex-col gap-5 p-4 md:px-8 lg:px-6">
@@ -433,11 +343,8 @@ const Dashboard = () => {
                                     </button>
                                 </div>
 
-
                                 {/* Loan distribution Graph */}
-                                <div>
-                                    Graph goes here
-                                </div>
+                                <div>Graph goes here</div>
                             </div>
                         </div>
                     </div>
@@ -445,91 +352,7 @@ const Dashboard = () => {
             </div>
 
             {/* Sidebar content */}
-            <div className="d-drawer-side">
-                <label
-                    htmlFor="my-drawer"
-                    aria-label="close sidebar"
-                    className="d-drawer-overlay"
-                ></label>
-
-                <ul className="d-menu lg:d-menu-lg min-h-full w-70 border-r-1 border-neutral-50 bg-white p-4 lg:p-[18px]">
-                    <div className="mb-4 lg:mb-6">
-                        <div className="flex items-center justify-start gap-3">
-                            <img
-                                src="./logo.svg"
-                                className="w-[24px] lg:w-[28px]"
-                                alt="CrediNova logo"
-                            />
-                            <span className="text-base font-semibold lg:text-lg">
-                                CrediNova
-                            </span>
-                        </div>
-                    </div>
-
-                    <li>
-                        <a className="d-menu-active">
-                            <LayoutGrid className="w-[16px]" />
-                            Dashboard
-                        </a>
-                    </li>
-                    <li>
-                        <details>
-                            <summary>
-                                <FileText className="w-[16px]" />
-                                Loans
-                            </summary>
-                            <ul>
-                                <li>
-                                    <a>Active Loans</a>
-                                </li>
-                                <li>
-                                    <a>Loan History</a>
-                                </li>
-                            </ul>
-                        </details>
-                    </li>
-                    <li>
-                        <a>
-                            <FilePen className="w-[16px]" />
-                            Apply New Loan
-                        </a>
-                    </li>
-                    <li>
-                        <details>
-                            <summary>
-                                <CreditCard className="w-[16px]" />
-                                Payments
-                            </summary>
-                            <ul>
-                                <li>
-                                    <a>Payment History</a>
-                                </li>
-                                <li>
-                                    <a>Auto-Pay Setup</a>
-                                </li>
-                            </ul>
-                        </details>
-                    </li>
-                    <li>
-                        <a>
-                            <ChartPie className="w-[16px]" />
-                            Reports
-                        </a>
-                    </li>
-                    <li className="mt-auto">
-                        <a>
-                            <Headset className="w-[16px]" />
-                            Help Center
-                        </a>
-                    </li>
-                    <li>
-                        <a>
-                            <Settings className="w-[16px]" />
-                            Settings
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <Sidebar onLogout={onLogout} />
         </div>
     )
 }

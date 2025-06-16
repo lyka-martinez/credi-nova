@@ -1,43 +1,76 @@
-import { memo } from 'react'
-import { Mail, LockKeyhole, EyeOff } from 'lucide-react'
+import { memo, useState } from 'react'
+import { Mail, LockKeyhole, EyeClosed, Eye } from 'lucide-react'
+import InputField from './input'
+import Button from './button'
 import WhiteLogo from '../assets/images/logo-white.webp'
 import Google from '../assets/images/google-logo.png'
 import Banner from '../assets/images/banner.png'
 import '../styles/loginpage.css'
 
-const LoginPage = () => {
+/**
+ * LoginBanner component displays the banner section of the login page.
+ * @returns JSX.Element
+ */
+
+const LoginBanner = () => (
+    <div className="b-banner bg-accent-500">
+        <div className="flex w-full items-center justify-start gap-2 lg:gap-3">
+            <img
+                src={WhiteLogo}
+                className="w-[24px] sm:w-[28px]"
+                alt="crediNova logo"
+            />
+            <span className="xs:text-lg font-medium lg:text-xl">CrediNova</span>
+        </div>
+
+        <img
+            src={Banner}
+            alt="Finance Banner"
+            className="hidden h-[50%] max-h-[380px] w-auto lg:block"
+        />
+
+        <div className="w-full text-start">
+            <h1 className="mb-2 text-lg font-medium tracking-wider sm:text-2xl lg:mb-5 lg:text-3xl">
+                Empowering Your Financial Future
+            </h1>
+
+            <p className="text-secondary-500 text-xs sm:text-base">
+                Secure, simple, and personalized finance solutions at your
+                fingertips.
+            </p>
+        </div>
+    </div>
+)
+
+/**
+ * LoginPage component
+ * @param onLogin - Callback function to handle login action
+ * @returns JSX.Element
+ */
+
+type LoginPageProps = {
+    onLogin: () => void
+}
+
+const LoginPage = ({ onLogin }: LoginPageProps) => {
+    const [showPassword, setshowPassword] = useState(false)
+    const [form, setForm] = useState({ email: '', password: '' })
+
+    const hanldeSubmit = (e: React.FormEvent) => {
+        e.preventDefault()
+
+        const { email, password } = form
+        if (email === 'admin@gmail.com' && password === '1234') {
+            onLogin()
+        } else {
+            alert('Invalid email or password')
+        }
+    }
+
     return (
         <div className="b-login-page">
             {/* Banner Section */}
-            <div className="b-banner bg-accent-500">
-                <div className="flex w-full items-center justify-start gap-2 lg:gap-3">
-                    <img
-                        src={WhiteLogo}
-                        className="w-[24px] sm:w-[28px]"
-                        alt="crediNova logo"
-                    />
-                    <span className="xs:text-lg font-medium lg:text-xl">
-                        CrediNova
-                    </span>
-                </div>
-
-                <img
-                    src={Banner}
-                    alt="Finance Banner"
-                    className="hidden h-[50%] max-h-[380px] w-auto lg:block"
-                />
-
-                <div className="w-full text-start">
-                    <h1 className="mb-2 text-lg font-medium tracking-wider sm:text-2xl lg:mb-5 lg:text-3xl">
-                        Empowering Your Financial Future
-                    </h1>
-
-                    <p className="text-secondary-500 text-xs sm:text-base">
-                        Secure, simple, and personalized finance solutions at
-                        your fingertips.
-                    </p>
-                </div>
-            </div>
+            <LoginBanner />
 
             {/* Login Section */}
             <div className="b-login">
@@ -52,62 +85,71 @@ const LoginPage = () => {
                             </p>
                         </div>
 
-                        <form className="flex w-full flex-col gap-2">
-                            {/* Email Inputs */}
-                            <fieldset className="d-fieldset">
-                                <legend className="d-fieldset-legend">
-                                    Email
-                                </legend>
+                        <form
+                            id="LoginForm"
+                            className="flex w-full flex-col gap-2"
+                            onSubmit={hanldeSubmit}
+                        >
+                            <InputField
+                                label="Email"
+                                icon={<Mail className="w-[16px] sm:w-[18px]" />}
+                                inputProps={{
+                                    required: true,
+                                    type: 'email',
+                                    placeholder: 'Enter email address',
+                                    value: form.email,
+                                    onChange: (e) => {
+                                        setForm({
+                                            ...form,
+                                            email: e.target.value,
+                                        })
+                                    },
+                                }}
+                                hint="Enter valid email address"
+                                className="d-validator sm:d-input-lg"
+                            />
 
-                                <label className="d-input d-validator sm:d-input-lg">
-                                    <Mail className="w-[16px] sm:w-[18px]" />
-                                    <input
-                                        type="email"
-                                        placeholder="Enter email address"
-                                        required
-                                    />
-                                </label>
-
-                                <div className="d-validator-hint mt-0 hidden">
-                                    Enter valid email address
-                                </div>
-                            </fieldset>
-
-                            {/* Password */}
                             <div>
-                                <fieldset className="d-fieldset">
-                                    <legend className="d-fieldset-legend">
-                                        Password
-                                    </legend>
-
-                                    <label className="d-input d-validator sm:d-input-lg">
+                                <InputField
+                                    label="Password"
+                                    type={showPassword ? 'text' : 'password'}
+                                    icon={
                                         <LockKeyhole className="w-[16px] sm:w-[18px]" />
-                                        <input
-                                            type="password"
-                                            required
-                                            placeholder="Enter Password"
-                                            minLength={8}
-                                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                                            title="Must be more than 8 characters, including number, lowercase letter, uppercase letter"
-                                        />
-
-                                        <button
-                                            type="button"
-                                            className="btn btn-ghost h-full px-1"
-                                        >
-                                            <EyeOff className="w-[16px] text-neutral-200 sm:w-[18px]" />
-                                        </button>
-                                    </label>
-
-                                    <div className="d-validator-hint mt-0 hidden">
-                                        Must be more than 8 characters,
-                                        including
-                                        <br />
-                                        At least one number <br />
-                                        At least one lowercase letter <br />
-                                        At least one uppercase letter
-                                    </div>
-                                </fieldset>
+                                    }
+                                    inputProps={{
+                                        placeholder: 'Enter Password',
+                                        required: true,
+                                        value: form.password,
+                                        onChange: (e) => {
+                                            setForm({
+                                                ...form,
+                                                password: e.target.value,
+                                            })
+                                        },
+                                    }}
+                                    hint="Enter valid password"
+                                    className="sm:d-input-lg"
+                                >
+                                    <button
+                                        type="button"
+                                        className="btn btn-ghost h-full px-1"
+                                        tabIndex={-1}
+                                        onClick={() =>
+                                            setshowPassword((prev) => !prev)
+                                        }
+                                        aria-label={
+                                            showPassword
+                                                ? 'Hide Password'
+                                                : 'Show Password'
+                                        }
+                                    >
+                                        {showPassword ? (
+                                            <Eye className="w-[16px] text-neutral-200 sm:w-[18px]" />
+                                        ) : (
+                                            <EyeClosed className="w-[16px] text-neutral-200 sm:w-[18px]" />
+                                        )}
+                                    </button>
+                                </InputField>
 
                                 <div className="mt-2 text-end text-xs font-medium sm:text-xs">
                                     <a href="#" className="text-primary">
@@ -119,22 +161,32 @@ const LoginPage = () => {
 
                         {/* Form Buttons */}
                         <div className="flex w-full flex-col gap-2 pt-4 lg:gap-3">
-                            <button className="d-btn d-btn-accent sm:d-btn-lg">
+                            <Button
+                                type="submit"
+                                variant="accent"
+                                size="lg"
+                                form="LoginForm"
+                            >
                                 Log In
-                            </button>
+                            </Button>
 
                             <div className="d-divider my-2 text-xs text-neutral-300 sm:text-xs">
                                 Or Log In With
                             </div>
 
-                            <button className="d-btn sm:d-btn-lg hover:bg-secondary-500/60 border-neutral-100 bg-white">
-                                <img
-                                    src={Google}
-                                    className="w-[18px] sm:w-[20px]"
-                                    alt="crediNova logo"
-                                />
+                            <Button
+                                variant="secondary"
+                                size="lg"
+                                leftIcon={
+                                    <img
+                                        src={Google}
+                                        className="w-[18px] sm:w-[20px]"
+                                        alt="crediNova logo"
+                                    />
+                                }
+                            >
                                 Google
-                            </button>
+                            </Button>
                         </div>
 
                         {/* Register Link */}
@@ -152,7 +204,6 @@ const LoginPage = () => {
                     </div>
                 </div>
 
-                {/* Footer Section */}
                 <div className="b-login-footer">
                     <p>© 2025 All rights reserved</p>
 
