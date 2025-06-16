@@ -30,6 +30,10 @@
     font-weight: 500;
 }
 
+@utility d-badge {
+    font-weight: 500;
+}
+
 @utility d-badge-xxs {
     --d-size: 0.5rem;
     padding: 0.25rem;
@@ -105,7 +109,32 @@
 
 @utility d-card-md {
     .d-card-body {
-        padding-block: 14px;
-        padding-inline: 20px;
+        padding-inline: 18px;
+    }
+}
+
+@utility d-table {
+    :where(th, td) {
+        height: 40px;
+        padding-block: 4px;
+    }
+
+    :where(thead, tfoot) {
+        color: var(--color-neutral-300);
+    }
+
+    :where(thead tr, tbody tr:not(:last-child)) {
+        border-bottom-color: var(--color-neutral-50);
+    }
+}
+
+@utility d-card-md {
+    .d-table {
+        :where(thead, tbody, tfoot) :where(th, td):first-child {
+            padding-inline-start: 18px;
+        }
+        :where(thead, tbody, tfoot) :where(th, td):last-child {
+            padding-inline-start: 18px;
+        }
     }
 }

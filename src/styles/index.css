@@ -131,6 +131,10 @@
     button:focus-visible {
         box-shadow: unset;
     }
+
+    table th {
+        font-weight: 400;
+    }
 }
 
 /* Lucide icon tweaks */

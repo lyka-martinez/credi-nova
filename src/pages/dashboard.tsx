@@ -15,8 +15,8 @@ import {
     CalendarClock,
     ChartNoAxesCombined,
     HandCoins,
-    // ChevronRight,
-    // ArrowUpRight,
+    ChevronRight,
+    ArrowUpRight,
     ChevronsUpDown,
     User,
     LogOut,
@@ -226,6 +226,147 @@ const Dashboard = () => {
                     </div>
 
                     {/* Payments */}
+                    <div className="grid grid-flow-row auto-rows-min gap-4 lg:grid-cols-3 xl:grid-cols-4">
+                        <div className="d-card d-card-sm lg:d-card-md border border-neutral-50 bg-white text-neutral-400 shadow-2xs lg:col-span-1">
+                            <div className="d-card-body gap-1">
+                                <div className="d-card-title mb-2">
+                                    <p>Payment Summary</p>
+                                </div>
+
+                                {/* Payment Summary List */}
+                                <div className="flex flex-col gap-2 text-neutral-300">
+                                    <div className="b-payment-summary-row hover:bg-secondary-600/60 rounded-sm border border-neutral-50 px-3 py-2 transition-colors duration-150">
+                                        <div>
+                                            <p className="text-sm font-medium text-neutral-500">
+                                                ₱ 22,400
+                                            </p>
+                                            <span className="text-xs">
+                                                Total Payments Made
+                                            </span>
+                                        </div>
+
+                                        <div>
+                                            <ChevronRight className="b-chevron-animate w-[16px]" />
+                                        </div>
+                                    </div>
+
+                                    <div className="b-payment-summary-row hover:bg-secondary-600/60 rounded-sm border border-neutral-50 px-3 py-2 transition-colors duration-150">
+                                        <div>
+                                            <p className="text-sm font-medium text-neutral-500">
+                                                8
+                                            </p>
+                                            <span className="text-xs">
+                                                Total On-Time Payments
+                                            </span>
+                                        </div>
+
+                                        <div>
+                                            <ChevronRight className="b-chevron-animate w-[16px]" />
+                                        </div>
+                                    </div>
+
+                                    <div className="b-payment-summary-row hover:bg-secondary-600/60 rounded-sm border border-neutral-50 px-3 py-2 transition-colors duration-150">
+                                        <div>
+                                            <p className="text-sm font-medium text-neutral-500">
+                                                2
+                                            </p>
+                                            <span className="text-xs">
+                                                Late Payments
+                                            </span>
+                                        </div>
+
+                                        <div>
+                                            <ChevronRight className="b-chevron-animate w-[16px]" />
+                                        </div>
+                                    </div>
+
+                                    <div className="b-payment-summary-row hover:bg-secondary-600/60 rounded-sm border border-neutral-50 px-3 py-2 transition-colors duration-150">
+                                        <div>
+                                            <p className="text-sm font-medium text-neutral-500">
+                                                0
+                                            </p>
+                                            <span className="text-xs">
+                                                Missed Payments
+                                            </span>
+                                        </div>
+
+                                        <div>
+                                            <ChevronRight className="b-chevron-animate w-[16px]" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Repayment Schedule Table */}
+                        <div className="d-card d-card-sm lg:d-card-md border border-neutral-50 bg-white text-neutral-400 shadow-2xs lg:col-span-2 lg:auto-cols-max lg:overflow-hidden xl:col-span-3">
+                            <div className="d-card-body gap-1 p-0!">
+                                <div className="d-card-title px-4 pt-3 lg:px-[18px]">
+                                    <p>Repayment Schedule</p>
+
+                                    <button className="d-btn d-btn-ghost d-btn-xs bg-secondary-600/30 hover:bg-secondary-600/60 h-[26px] gap-1 rounded-sm px-2 font-medium text-neutral-300">
+                                        View more
+                                        <ArrowUpRight className="w-[14px]" />
+                                    </button>
+                                </div>
+
+                                <div className="overflow-x-auto">
+                                    <table className="d-table b-responsive-table">
+                                        <thead className="hidden md:table-header-group">
+                                            <tr>
+                                                <th>Date</th>
+                                                <th>Amount</th>
+                                                <th>Status</th>
+                                                <th>Payment Method</th>
+                                                <th>Remarks</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr className="hover:bg-secondary-600/60">
+                                                <td data-label="Date">
+                                                    Mar 25, 2025
+                                                </td>
+                                                <td data-label="Amount">
+                                                    ₱2,800
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div className="d-badge d-badge-soft d-badge-success h-[24px] rounded-sm border-transparent px-2 text-xs">
+                                                        Paid
+                                                    </div>
+                                                </td>
+                                                <td data-label="Payment">
+                                                    GCash
+                                                </td>
+                                                <td data-label="Remarks">
+                                                    On Time
+                                                </td>
+                                            </tr>
+                                            <tr className="hover:bg-secondary-600/60">
+                                                <td data-label="Date">
+                                                    Mar 25, 2025
+                                                </td>
+                                                <td data-label="Amount">
+                                                    ₱2,800
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div className="d-badge d-badge-soft d-badge-success h-[24px] rounded-sm border-transparent px-2 text-xs">
+                                                        Paid
+                                                    </div>
+                                                </td>
+                                                <td data-label="Payment">
+                                                    GCash
+                                                </td>
+                                                <td data-label="Remarks">
+                                                    On Time
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     {/* Loans */}
                 </div>
             </div>

@@ -2,10 +2,10 @@
 @reference "./index.css";
 
 #root {
-    @apply m-0 
-    min-h-lvh 
-    max-w-lvw 
-    min-w-xs;
+    margin: 0;
+    min-height: 100lvh;
+    max-width: 100lvw;
+    min-width: var(--container-xs, 20rem);
 }
 
 .b-payment-summary-row {
@@ -20,5 +20,24 @@
 
     .b-chevron-animate {
         transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+/* Responsive table styles [only below medium screens] */
+@media (width < 48rem) {
+    .b-responsive-table tr {
+        display: block;
+        padding-block: 6px;
+    }
+
+    .b-responsive-table td {
+        display: flex;
+        justify-content: space-between;
+          height: 32px;
+    }
+
+    .b-responsive-table td::before {
+        content: attr(data-label);
+        color: var(--color-neutral-300);
     }
 }
