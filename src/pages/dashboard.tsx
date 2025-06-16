@@ -268,21 +268,6 @@ const Dashboard = () => {
                                     <div className="b-payment-summary-row hover:bg-secondary-600/60 rounded-sm border border-neutral-50 px-3 py-2 transition-colors duration-150">
                                         <div>
                                             <p className="text-sm font-medium text-neutral-500">
-                                                2
-                                            </p>
-                                            <span className="text-xs">
-                                                Late Payments
-                                            </span>
-                                        </div>
-
-                                        <div>
-                                            <ChevronRight className="b-chevron-animate w-[16px]" />
-                                        </div>
-                                    </div>
-
-                                    <div className="b-payment-summary-row hover:bg-secondary-600/60 rounded-sm border border-neutral-50 px-3 py-2 transition-colors duration-150">
-                                        <div>
-                                            <p className="text-sm font-medium text-neutral-500">
                                                 0
                                             </p>
                                             <span className="text-xs">
@@ -368,6 +353,94 @@ const Dashboard = () => {
                     </div>
 
                     {/* Loans */}
+                    <div className="grid grid-flow-row auto-rows-min gap-4 lg:grid-cols-3 xl:grid-cols-6">
+                        {/* Repayment Schedule Table */}
+                        <div className="d-card d-card-sm lg:d-card-md border border-neutral-50 bg-white text-neutral-400 shadow-2xs lg:col-span-2 lg:auto-cols-max lg:overflow-hidden xl:col-span-4">
+                            <div className="d-card-body gap-1 p-0!">
+                                <div className="d-card-title px-4 pt-3 lg:px-[18px]">
+                                    <p>Loans</p>
+
+                                    <button className="d-btn d-btn-ghost d-btn-xs bg-secondary-600/30 hover:bg-secondary-600/60 h-[26px] gap-1 rounded-sm px-2 font-medium text-neutral-300">
+                                        View more
+                                        <ArrowUpRight className="w-[14px]" />
+                                    </button>
+                                </div>
+
+                                <div className="overflow-x-auto">
+                                    <table className="d-table b-responsive-table">
+                                        <thead className="hidden md:table-header-group">
+                                            <tr>
+                                                <th>Loan Type</th>
+                                                <th>Amount</th>
+                                                <th>Terms</th>
+                                                <th>Date Applied</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr className="hover:bg-secondary-600/60">
+                                                <td data-label="Loan Type">
+                                                    Personal Loan
+                                                </td>
+                                                <td data-label="Amount">
+                                                    ₱50,000
+                                                </td>
+                                                <td data-label="Terms">
+                                                    12 months
+                                                </td>
+                                                <td data-label="Date Applied">
+                                                    Jan 15, 2025
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div className="d-badge d-badge-soft d-badge-success h-[24px] rounded-sm border-transparent px-2 text-xs">
+                                                        Completed
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr className="hover:bg-secondary-600/60">
+                                                <td data-label="Loan Type">
+                                                    Home Renovation Loan
+                                                </td>
+                                                <td data-label="Amount">
+                                                    ₱100,000
+                                                </td>
+                                                <td data-label="Terms">
+                                                    24 months
+                                                </td>
+                                                <td data-label="Date Applied">
+                                                    Feb 10, 2025
+                                                </td>
+                                                <td data-label="Status">
+                                                    <div className="d-badge d-badge-soft d-badge-warning h-[24px] rounded-sm border-transparent px-2 text-xs">
+                                                        Active
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="d-card d-card-sm lg:d-card-md border border-neutral-50 bg-white text-neutral-400 shadow-2xs lg:col-span-1 xl:col-span-2">
+                            <div className="d-card-body gap-1">
+                                <div className="d-card-title">
+                                    <p>Loans Distribution</p>
+
+                                    <button className="d-btn d-btn-ghost d-btn-xs bg-secondary-600/30 hover:bg-secondary-600/60 h-[26px] gap-1 rounded-sm px-2 font-medium text-neutral-300">
+                                        View more
+                                        <ArrowUpRight className="w-[14px]" />
+                                    </button>
+                                </div>
+
+
+                                {/* Loan distribution Graph */}
+                                <div>
+                                    Graph goes here
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
