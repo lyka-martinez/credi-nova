@@ -1,4 +1,5 @@
 import { memo } from 'react'
+import Profile from '../assets/images/profile.png'
 import {
     LayoutGrid,
     FileText,
@@ -16,6 +17,9 @@ import {
     HandCoins,
     ChevronRight,
     ArrowUpRight,
+    ChevronsUpDown,
+    User,
+    LogOut
 } from 'lucide-react'
 
 const Dashboard = () => {
@@ -26,43 +30,99 @@ const Dashboard = () => {
             {/* Page content */}
             <div className="d-drawer-content flex flex-col justify-center">
                 {/* Navbar */}
-                <div className="d-navbar bg-base-100 sticky top-0 z-1 h-[65px] justify-between border-b border-neutral-50 px-4 py-0">
-                    <div className="navbar-start flex items-center gap-2 lg:hidden">
-                        <img
-                            src="./logo.svg"
-                            className="w-[24px]"
-                            alt="CrediNova logo"
-                        />
-                        <span className="text-base font-semibold">
-                            CrediNova
-                        </span>
+                <div className="d-navbar bg-base-100 sticky top-0 z-1 min-h-[60px] justify-between border-b border-neutral-50 px-4 py-0 md:px-8 lg:px-6">
+                    <div className="d-navbar-start">
+                        <div className="flex items-center gap-2 lg:hidden">
+                            <img
+                                src="./logo.svg"
+                                className="w-[24px]"
+                                alt="CrediNova logo"
+                            />
+                            <span className="text-base font-semibold">
+                                CrediNova
+                            </span>
+                        </div>
+
+                        {/* Search area [show only in large screens] */}
+                        <form className="hidden items-center gap-2 lg:flex">
+                            <label className="d-input h-[34px] text-xs">
+                                <Search className="w-[18px]" />
+                                <input
+                                    type="search"
+                                    className="grow"
+                                    placeholder="Search anything here.."
+                                />
+                            </label>
+                        </form>
                     </div>
 
-                    <div className="navbar-end">
-                        {/* Search area [show only in large screens] */}
-                        <button className="d-btn d-btn-ghost hidden px-2">
-                            <Search className="w-[22px]" />
-                        </button>
-
+                    <div className="d-navbar-end lg:w-full lg:gap-2">
+                        {/* Notificaiton Button */}
                         <button tabIndex={0} className="d-btn d-btn-ghost px-2">
                             <div className="d-indicator">
-                                <Bell className="w-[22px]" />
+                                <Bell className="w-[20px]" />
                                 <div className="d-badge d-badge-xxs d-badge-accent d-indicator-item"></div>
                             </div>
                         </button>
 
+                        {/* User Profile Dropdown */}
+                        <div className="d-dropdown d-dropdown-end hidden lg:block">
+                            <div
+                                tabIndex={0}
+                                role="button"
+                                className="d-btn d-btn-ghost d-avatar gap-2 bg-transparent px-2 shadow-none"
+                            >
+                                <div className="w-9 rounded-full">
+                                    <img
+                                        alt="Tailwind CSS Navbar component"
+                                        src={Profile}
+                                    />
+                                </div>
+
+                                <p className="flex flex-col items-start justify-center text-xs">
+                                    <span className="font-medium">
+                                        John Doe
+                                    </span>
+                                    <span className="font-normal text-neutral-300">
+                                        jhondoe@gmail.com
+                                    </span>
+                                </p>
+
+                                <ChevronsUpDown className="w-[14px] text-neutral-300" />
+                            </div>
+
+                            <ul
+                                tabIndex={0}
+                                className="d-menu d-dropdown-content bg-base-100 rounded-box z-1 mt-2 w-52 border border-neutral-50 p-2 shadow-md"
+                            >
+                                <li>
+                                    <a className="py-[6px] gap-2">
+                                        <User className="w-[14px]" />
+                                        Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a className="text-accent-700 py-[6px] gap-2">
+                                        <LogOut className="w-[14px]" />
+                                        Logout
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+0
+                        {/* Drawer button [show only in medium screens] */}
                         <label
                             htmlFor="my-drawer"
                             data-tip="Menu"
                             className="d-btn d-btn-ghost d-drawer-button d-tooltip d-tooltip-bottom px-2 lg:hidden"
                         >
-                            <Menu className="w-[22px]" />
+                            <Menu className="w-[20px]" />
                         </label>
                     </div>
                 </div>
 
                 {/* Main content */}
-                <div className="bg-secondary-600/30 flex flex-1 flex-col gap-5 p-4">
+                <div className="bg-secondary-600/30 flex flex-1 flex-col gap-5 p-4 md:px-8 lg:px-6">
                     {/* Headings */}
                     <div className="flex items-center justify-start">
                         <div>
@@ -290,14 +350,14 @@ const Dashboard = () => {
 
                     <li>
                         <a className="d-menu-active">
-                            <LayoutGrid className="w-[16px] lg:w-[18px]" />
+                            <LayoutGrid className="w-[16px]" />
                             Dashboard
                         </a>
                     </li>
                     <li>
                         <details>
                             <summary>
-                                <FileText className="w-[16px] lg:w-[18px]" />
+                                <FileText className="w-[16px]" />
                                 Loans
                             </summary>
                             <ul>
@@ -312,14 +372,14 @@ const Dashboard = () => {
                     </li>
                     <li>
                         <a>
-                            <FilePen className="w-[16px] lg:w-[18px]" />
+                            <FilePen className="w-[16px]" />
                             Apply New Loan
                         </a>
                     </li>
                     <li>
                         <details>
                             <summary>
-                                <CreditCard className="w-[16px] lg:w-[18px]" />
+                                <CreditCard className="w-[16px]" />
                                 Payments
                             </summary>
                             <ul>
@@ -334,19 +394,19 @@ const Dashboard = () => {
                     </li>
                     <li>
                         <a>
-                            <ChartPie className="w-[16px] lg:w-[18px]" />
+                            <ChartPie className="w-[16px]" />
                             Reports
                         </a>
                     </li>
                     <li className="mt-auto">
                         <a>
-                            <Headset className="w-[16px] lg:w-[18px]" />
+                            <Headset className="w-[16px]" />
                             Help Center
                         </a>
                     </li>
                     <li>
                         <a>
-                            <Settings className="w-[16px] lg:w-[18px]" />
+                            <Settings className="w-[16px]" />
                             Settings
                         </a>
                     </li>
