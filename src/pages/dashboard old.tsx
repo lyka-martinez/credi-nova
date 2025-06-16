@@ -15,8 +15,8 @@ import {
     CalendarClock,
     ChartNoAxesCombined,
     HandCoins,
-    // ChevronRight,
-    // ArrowUpRight,
+    ChevronRight,
+    ArrowUpRight,
     ChevronsUpDown,
     User,
     LogOut,
@@ -124,29 +124,21 @@ const Dashboard = () => {
                 {/* Main content */}
                 <div className="bg-secondary-600/30 flex flex-1 flex-col gap-5 p-4 md:px-8 lg:px-6">
                     {/* Headings */}
-                    <div className="flex items-end justify-start gap-2 lg:justify-between">
+                    <div className="flex items-center justify-start">
                         <div>
-                            <h2 className="mb-1 text-lg font-medium lg:text-xl">
+                            <h2 className="mb-1 text-lg font-medium">
                                 Dashboard
                             </h2>
                             <p className="text-sm text-neutral-300">
                                 Here’s a summary of your financial activity.
                             </p>
                         </div>
-
-                        <div className="hidden text-sm lg:flex lg:gap-2">
-                            <span className="text-primary-600 font-medium">
-                                Monday
-                            </span>
-                            <span className="text-neutral-400">
-                                June 9, 2025
-                            </span>
-                        </div>
+                        <div className="hidden">Date & Time</div>
                     </div>
 
                     {/* Widgets */}
-                    <div className="grid grid-flow-row auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                        <div className="d-card d-card-sm xl:d-card-md bg-primary-500 border-primary-100 border text-white shadow-2xs">
+                    <div className="grid grid-flow-row auto-rows-fr gap-4 md:grid-cols-2 lg:grid-cols-4">
+                        <div className="d-card d-card-sm bg-primary-500 border-primary-100 border text-white shadow-2xs">
                             <div className="d-card-body gap-1">
                                 <div className="d-card-title">
                                     <p>Total Loan Amount</p>
@@ -156,14 +148,14 @@ const Dashboard = () => {
                                 </div>
 
                                 <div>
-                                    <h3 className="mb-1 text-lg font-semibold">
+                                    <h3 className="mb-1 text-[18px] font-semibold">
                                         ₱ 120,000.00
                                     </h3>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="d-card d-card-sm xl:d-card-md border border-neutral-50 bg-white text-neutral-400 shadow-2xs">
+                        <div className="d-card d-card-sm lg:d-card-md border border-neutral-50 bg-white text-neutral-400 shadow-2xs">
                             <div className="d-card-body gap-1">
                                 <div className="d-card-title">
                                     <p>Outstanding Balance</p>
@@ -173,14 +165,14 @@ const Dashboard = () => {
                                 </div>
 
                                 <div>
-                                    <h3 className="mb-1 text-lg font-semibold text-neutral-500">
+                                    <h3 className="mb-1 text-[18px] font-semibold text-neutral-500">
                                         ₱ 43,200.00
                                     </h3>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="d-card d-card-sm xl:d-card-md border border-neutral-50 bg-white text-neutral-400 shadow-2xs">
+                        <div className="d-card d-card-sm lg:d-card-md border border-neutral-50 bg-white text-neutral-400 shadow-2xs">
                             <div className="d-card-body gap-1">
                                 <div className="d-card-title">
                                     <p>Next Due Payment</p>
@@ -190,7 +182,7 @@ const Dashboard = () => {
                                 </div>
 
                                 <div>
-                                    <h3 className="text-lg font-semibold text-neutral-500">
+                                    <h3 className="text-[18px] font-semibold text-neutral-500">
                                         ₱ 2,800.00
                                     </h3>
                                     <p className="text-xssm">
@@ -203,7 +195,7 @@ const Dashboard = () => {
                             </div>
                         </div>
 
-                        <div className="d-card d-card-sm xl:d-card-md border border-neutral-50 bg-white text-neutral-400 shadow-2xs">
+                        <div className="d-card d-card-sm lg:d-card-md border border-neutral-50 bg-white text-neutral-400 shadow-2xs">
                             <div className="d-card-body gap-1">
                                 <div className="d-card-title">
                                     <p>Loan Status</p>
@@ -217,7 +209,7 @@ const Dashboard = () => {
                                         aria-label="warning"
                                         className="d-status d-status-warning d-status-md"
                                     ></div>
-                                    <h3 className="text-lg font-semibold text-neutral-500">
+                                    <h3 className="text-[18px] font-semibold text-neutral-500">
                                         Active
                                     </h3>
                                 </div>
@@ -226,7 +218,111 @@ const Dashboard = () => {
                     </div>
 
                     {/* Payments */}
+                    <div className="grid grid-flow-row auto-rows-min gap-4 lg:grid-cols-4">
+                        <div className="d-card d-card-sm lg:d-card-md border border-neutral-50 bg-white text-neutral-400 shadow-2xs">
+                            <div className="d-card-body gap-2">
+                                <div className="d-card-title mb-2">
+                                    Payment Summary
+                                </div>
+
+                                {/* Payment Summary List */}
+                                <div className="flex flex-col gap-2 text-neutral-300">
+                                    <div className="b-payment-summary-row hover:bg-secondary-600/60 rounded-sm border border-neutral-50 px-3 py-2 transition-colors duration-150">
+                                        <div>
+                                            <p className="text-base font-medium text-neutral-500">
+                                                ₱ 22,400
+                                            </p>
+                                            <span className="text-xs">
+                                                Total Payments Made
+                                            </span>
+                                        </div>
+
+                                        <div>
+                                            <ChevronRight className="b-chevron-animate w-[18px]" />
+                                        </div>
+                                    </div>
+
+                                    <div className="b-payment-summary-row hover:bg-secondary-600/60 rounded-sm border border-neutral-50 px-3 py-2 transition-colors duration-150">
+                                        <div>
+                                            <p className="text-base font-medium text-neutral-500">
+                                                8
+                                            </p>
+                                            <span className="text-xs">
+                                                Total On-Time Payments
+                                            </span>
+                                        </div>
+
+                                        <div>
+                                            <ChevronRight className="b-chevron-animate w-[18px]" />
+                                        </div>
+                                    </div>
+
+                                    <div className="b-payment-summary-row hover:bg-secondary-600/60 rounded-sm border border-neutral-50 px-3 py-2 transition-colors duration-150">
+                                        <div>
+                                            <p className="text-base font-medium text-neutral-500">
+                                                2
+                                            </p>
+                                            <span className="text-xs">
+                                                Late Payments
+                                            </span>
+                                        </div>
+
+                                        <div>
+                                            <ChevronRight className="b-chevron-animate w-[18px]" />
+                                        </div>
+                                    </div>
+
+                                    <div className="b-payment-summary-row hover:bg-secondary-600/60 rounded-sm border border-neutral-50 px-3 py-2 transition-colors duration-150">
+                                        <div>
+                                            <p className="text-base font-medium text-neutral-500">
+                                                0
+                                            </p>
+                                            <span className="text-xs">
+                                                Missed Payments
+                                            </span>
+                                        </div>
+
+                                        <div>
+                                            <ChevronRight className="b-chevron-animate w-[18px]" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Repayment Schedule Table */}
+                        <div className="flex flex-col rounded-lg border border-neutral-50 bg-white shadow-2xs lg:col-span-3">
+                            <div className="flex items-start justify-between px-4 py-3">
+                                <div className="text-sm font-medium">
+                                    Repayment Schedule
+                                </div>
+                                <button className="d-btn d-btn-ghost d-btn-sm bg-secondary-600/30 hover:bg-secondary-600/60 h-[28px] gap-1 rounded-sm px-2 font-medium text-neutral-300">
+                                    View more
+                                    <ArrowUpRight className="w-[14px]" />
+                                </button>
+                            </div>
+
+                            <div className="">Table goes here..</div>
+                        </div>
+                    </div>
+
                     {/* Loans */}
+                    <div className="grid grid-flow-row auto-rows-min gap-4 lg:grid-cols-6">
+                        <div className="rounded-lg border border-neutral-50 bg-white p-4 shadow-2xs lg:col-span-4">
+                            Table goes here..
+                        </div>
+
+                        <div className="d-card d-card-sm lg:d-card-md border border-neutral-50 bg-white shadow-2xs lg:col-span-2">
+                            <div className="d-card-body gap-2">
+                                <div className="d-card-title mb-2">
+                                    Loan Distribution
+                                </div>
+
+                                {/* Loan Distribution Graph */}
+                                <div>Graph goes here..</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

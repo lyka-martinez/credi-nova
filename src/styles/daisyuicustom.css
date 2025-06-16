@@ -102,3 +102,10 @@
         padding-block: 12px;
     }
 }
+
+@utility d-card-md {
+    .d-card-body {
+        padding-block: 14px;
+        padding-inline: 20px;
+    }
+}
