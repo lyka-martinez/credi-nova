@@ -9,7 +9,7 @@ import type { ButtonHTMLAttributes, ReactNode } from 'react'
 type ButtonProps = {
     children: ReactNode
     variant?: 'accent' | 'ghost' | 'primary' | 'secondary'
-    size?: 'sm' | 'md' | 'lg'
+    size?: 'xs' | 'sm' | 'md' | 'lg'
     className?: string
     leftIcon?: ReactNode
     rightIcon?: ReactNode
@@ -23,6 +23,7 @@ const variantClass = {
 }
 
 const sizeClass = {
+    xs: 'd-btn-xs',
     sm: 'd-btn-sm',
     md: '',
     lg: 'sm:d-btn-lg',
@@ -47,6 +48,11 @@ const Button = ({
             {children}
             {rightIcon && <span>{rightIcon}</span>}
         </button>
+
+        // <button className="d-btn d-btn-ghost d-btn-xs bg-secondary-600/30 hover:bg-secondary-600/60 h-[26px] gap-1 rounded-sm px-2 font-medium text-neutral-300">
+        //                             View more
+        //                             <ArrowUpRight className="w-[14px]" />
+        //                         </button>
     )
 }
 

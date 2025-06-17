@@ -1,7 +1,7 @@
-import { memo, useState } from 'react'
+import { useState } from 'react'
 import { Mail, LockKeyhole, EyeClosed, Eye } from 'lucide-react'
-import InputField from './input'
-import Button from './button'
+import InputField from '../components/input'
+import Button from '../components/button'
 import WhiteLogo from '../assets/images/logo-white.webp'
 import Google from '../assets/images/google-logo.png'
 import Banner from '../assets/images/banner.png'
@@ -217,4 +217,4 @@ const LoginPage = ({ onLogin }: LoginPageProps) => {
     )
 }
 
-export default memo(LoginPage)
+export default LoginPage
