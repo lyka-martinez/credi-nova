@@ -236,7 +236,7 @@ const Dashboard = () => {
             <div className="grid grid-flow-row auto-rows-min gap-4 lg:grid-cols-3 xl:grid-cols-6">
                 {/* Loans Table */}
                 <Card
-                    cardClass="lg:col-span-2 lg:auto-cols-max lg:overflow-hidden xl:col-span-4"
+                    cardClass="lg:col-span-2 lg:auto-cols-max lg:overflow-hidden xl:col-span-4 order-2 lg:order-1"
                     cardBodyClass="p-0!"
                 >
                     <div className="d-card-title px-4 pt-3 xl:px-[18px]">
@@ -294,7 +294,7 @@ const Dashboard = () => {
                     </div>
                 </Card>
 
-                <Card cardClass="lg:col-span-1 xl:col-span-2">
+                <Card cardClass="lg:col-span-1 xl:col-span-2 order-1 lg:order-2">
                     <div className="d-card-title mb-2">
                         <p>Loans Distribution</p>
 
