@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import LoginPage from './pages/loginPage'
-import Dashboard from './pages/dashboard'
+import MainPage from './pages/mainPage'
 import './styles/App.css'
 
 /**
@@ -35,7 +35,7 @@ const App = () => {
             className={`b-app-container ${fade === 'out' ? 'b-fade-out ' : ''}`}
         >
             {isLoggedIn ? (
-                <Dashboard onLogout={handleLogout} />
+                <MainPage onLogout={handleLogout} />
             ) : (
                 <LoginPage onLogin={handleLogin} />
             )}
